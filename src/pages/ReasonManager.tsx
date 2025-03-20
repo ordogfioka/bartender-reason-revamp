@@ -119,7 +119,7 @@ const ReasonManager: React.FC = () => {
   };
   
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 flex flex-col items-center bg-purple-100 dark:bg-purple-900">
+    <div className="min-h-screen py-12 px-4 sm:px-6 flex flex-col items-center bg-green-50 dark:bg-teal-900">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -127,16 +127,16 @@ const ReasonManager: React.FC = () => {
         className="w-full max-w-2xl space-y-8"
       >
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center px-3 py-1 mb-2 rounded-full bg-purple-200 text-purple-700 dark:bg-purple-800 dark:text-purple-200 text-xs font-medium">
+          <div className="inline-flex items-center justify-center px-3 py-1 mb-2 rounded-full bg-teal-200 text-teal-700 dark:bg-teal-800 dark:text-teal-200 text-xs font-medium">
             MANAGEMENT
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-purple-900 dark:text-purple-100">Cancellation Reasons</h1>
-          <p className="text-purple-700 dark:text-purple-300 max-w-md mx-auto">
+          <h1 className="text-3xl font-bold tracking-tight text-teal-900 dark:text-teal-100">Cancellation Reasons</h1>
+          <p className="text-teal-700 dark:text-teal-300 max-w-md mx-auto">
             Manage the list of reasons why a bartender might cancel an order.
           </p>
         </div>
         
-        <Card className="overflow-hidden border backdrop-blur-sm bg-white/90 dark:bg-purple-800/50">
+        <Card className="overflow-hidden border backdrop-blur-sm bg-white/90 dark:bg-teal-800/50">
           <CardContent className="p-6">
             <div className="flex items-center space-x-2 mb-6">
               <Input
@@ -150,14 +150,14 @@ const ReasonManager: React.FC = () => {
               />
               <Button
                 onClick={handleAddReason}
-                className="rounded-md bg-purple-600 hover:bg-purple-700"
+                className="rounded-md bg-teal-600 hover:bg-teal-700"
                 size="icon"
               >
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
             
-            <Separator className="mb-6 bg-purple-200 dark:bg-purple-700" />
+            <Separator className="mb-6 bg-teal-200 dark:bg-teal-700" />
             
             <ScrollArea className="h-[500px] pr-4">
               <AnimatePresence>
@@ -166,9 +166,9 @@ const ReasonManager: React.FC = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-center p-8 text-purple-600 dark:text-purple-300"
+                    className="text-center p-8 text-teal-600 dark:text-teal-300"
                   >
-                    <Settings className="mx-auto h-12 w-12 text-purple-400 dark:text-purple-500 mb-3" />
+                    <Settings className="mx-auto h-12 w-12 text-teal-400 dark:text-teal-500 mb-3" />
                     <p>No reasons added yet.</p>
                     <p className="text-sm">Add your first reason above.</p>
                   </motion.div>
@@ -182,7 +182,7 @@ const ReasonManager: React.FC = () => {
                         exit={{ opacity: 0, height: 0, marginBottom: 0 }}
                         transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
                         layout
-                        className="reason-card bg-white dark:bg-purple-800 border-purple-200 dark:border-purple-700"
+                        className="reason-card bg-white dark:bg-teal-800 border-teal-200 dark:border-teal-700"
                       >
                         {editingId === reason.id ? (
                           <div className="flex items-center space-x-2">
@@ -200,7 +200,7 @@ const ReasonManager: React.FC = () => {
                               onClick={handleSaveEdit} 
                               size="icon" 
                               variant="ghost"
-                              className="hover:bg-purple-100 dark:hover:bg-purple-700"
+                              className="hover:bg-teal-100 dark:hover:bg-teal-700"
                             >
                               <Check className="h-4 w-4 text-green-500" />
                             </Button>
@@ -208,21 +208,21 @@ const ReasonManager: React.FC = () => {
                               onClick={handleCancelEdit} 
                               size="icon" 
                               variant="ghost"
-                              className="hover:bg-purple-100 dark:hover:bg-purple-700"
+                              className="hover:bg-teal-100 dark:hover:bg-teal-700"
                             >
                               <X className="h-4 w-4 text-red-500" />
                             </Button>
                           </div>
                         ) : (
                           <div className="flex items-center justify-between">
-                            <span className="text-lg font-medium text-purple-900 dark:text-purple-100">{reason.text}</span>
+                            <span className="text-lg font-medium text-teal-900 dark:text-teal-100">{reason.text}</span>
                             <div className="flex items-center space-x-1">
                               <Button
                                 onClick={() => handleMoveUp(index)}
                                 size="icon"
                                 variant="ghost"
                                 disabled={index === 0}
-                                className="h-8 w-8 hover:bg-purple-100 dark:hover:bg-purple-700"
+                                className="h-8 w-8 hover:bg-teal-100 dark:hover:bg-teal-700"
                               >
                                 <ChevronUp className="h-4 w-4" />
                               </Button>
@@ -231,7 +231,7 @@ const ReasonManager: React.FC = () => {
                                 size="icon"
                                 variant="ghost"
                                 disabled={index === reasons.length - 1}
-                                className="h-8 w-8 hover:bg-purple-100 dark:hover:bg-purple-700"
+                                className="h-8 w-8 hover:bg-teal-100 dark:hover:bg-teal-700"
                               >
                                 <ChevronDown className="h-4 w-4" />
                               </Button>
@@ -239,7 +239,7 @@ const ReasonManager: React.FC = () => {
                                 onClick={() => handleStartEdit(reason)}
                                 size="icon"
                                 variant="ghost"
-                                className="h-8 w-8 hover:bg-purple-100 dark:hover:bg-purple-700"
+                                className="h-8 w-8 hover:bg-teal-100 dark:hover:bg-teal-700"
                               >
                                 <Edit className="h-4 w-4" />
                               </Button>
@@ -247,7 +247,7 @@ const ReasonManager: React.FC = () => {
                                 onClick={() => handleDeleteReason(reason.id)}
                                 size="icon"
                                 variant="ghost"
-                                className="h-8 w-8 text-destructive hover:bg-purple-100 dark:hover:bg-purple-700"
+                                className="h-8 w-8 text-destructive hover:bg-teal-100 dark:hover:bg-teal-700"
                               >
                                 <Trash2 className="h-4 w-4" />
                               </Button>
@@ -268,3 +268,4 @@ const ReasonManager: React.FC = () => {
 };
 
 export default ReasonManager;
+
